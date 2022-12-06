@@ -9,10 +9,12 @@ export class HeaderComponent implements OnInit{
  
   title:string = 'My Task List';
 
-  constructor(){}
+  constructor() { }
 
   ngOnInit(): void {
-    
   }
 
+  toggleAddTask(){
+    console.log("toggleAddTask!");
+  }
 }
