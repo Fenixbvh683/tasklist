@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subjeet} from 'rxjs';
+import { Observable, Subject} from 'rxjs';
 
 
 @Injectable({
@@ -7,16 +7,16 @@ import { Observable, Subjeet} from 'rxjs';
 })
 export class UiService {
   private showAddTask:boolean = false;
-  private subjet = new Subject<any>(); 
+  private subject = new Subject<any>(); 
 
   constructor() { }
 
   toggleAddTask():void{
    
     this.showAddTask = !this.showAddTask;
-    this.subjet.nex(this.showAddTask);
+    this.subject.next(this.showAddTask);
       }
       onToggle():Observable<any>{
-        return this.subjet.asObservable();
+        return this.subject.asObservable();
       }
 }

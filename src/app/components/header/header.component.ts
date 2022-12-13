@@ -12,22 +12,24 @@ export class HeaderComponent implements OnInit{
  
   title:string = 'My Task List';
   showAddTask: boolean = true;
-  subscription= Subscription;
+  subscription? = new Subscription;
   
   constructor(
-    private uiService: UiService
-    private router:Router
+    private uiService:UiService
+    // private router:Router
   ) {
-    this.subscription = this.uiService.onToggle().subscribe(Value => this.showAddTask = value);
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showAddTask = value);
    }
 
   ngOnInit(): void {
   }
 
   toggleAddTask(){
-    this.uiService.toogleAddTask();
+    this.uiService.toggleAddTask();
   }
+  /*
   hasRouter(router: string){
-    return this.router.url === route
+    return this.router.url === router
   }
+  */
 }
